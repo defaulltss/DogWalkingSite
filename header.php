@@ -12,7 +12,7 @@
         <a class="navtext" href="index.php">Sākums</a>
         <a class="navtext" href="EmpRegister.php">Darbinieka reģistrācija</a>
         <?php
-                if (isset($_SESSION['UserId'])) {
+                if (isset($_SESSION['userId'])) {
                     echo '<a class="navtext" href="templates/logout.inc.php">Atslēgties</a>';
                 }
                 else {
