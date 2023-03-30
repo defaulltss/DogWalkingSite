@@ -11,16 +11,9 @@ a:hover{
 html {
     background-color: #E5E5E5;
 }
-.header {
-    background-color: gray;
-    text-align: center;
-    height: auto;
-
-}
 .body {
-    background-color: #E5E5E5;
     text-align: center;
-    height: 93%
+    height: 100%
 }
 .rounded-lg-3 {
     height: 50%;
@@ -36,8 +29,7 @@ html {
     scroll-behavior: smooth;
 }
 .footer{
-    background-color: gray;
-    height: 6.3%;
+    height: 5%;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -90,3 +82,17 @@ html {
     width: 15%;
     text-align: center;
 }
+.form-control{
+    margin-bottom: -1%;
+}
+.d-flex {
+    margin-top: 90%;
+}
+.login {
+    text-align: center;
+}
+.container-sm{
+    text-align: center;
+    border: #000;
+}
+/* https://getbootstrap.com/docs/5.2/forms/layout/ */

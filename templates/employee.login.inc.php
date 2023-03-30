@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['login-submit'])) {
 
     require 'dbh.inc.php';
@@ -11,7 +12,7 @@ if (isset($_POST['login-submit'])) {
         exit();
     }
     else {
-        $sql = "SELECT * FROM Users WHERE Users_uid=? OR Users_pwd=?";
+        $sql = "SELECT * FROM Employee WHERE Employee_uid=? OR Employee_pwd=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../login.php?error=sqlerror");
@@ -22,15 +23,15 @@ if (isset($_POST['login-submit'])) {
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);                                
             if ($row = mysqli_fetch_assoc($result)) {
-                $pwdCheck = password_verify($password, $row['Users_pwd']);          
+                $pwdCheck = password_verify($password, $row['Employee_pwd']);          
                 if ($pwdCheck == false) {
                     header("Location: ../login.php?error=wrongpassword");
                     exit();
                 }
                 else if ($pwdCheck == true) {
                     session_start();
-                    $_SESSION['userId'] = $row['Users_id'];
-                    $_SESSION['userUid'] = $row['Users_uid'];
+                    $_SESSION['employeeid'] = $row['Employee_id'];
+                    $_SESSION['employeeUid'] = $row['Employee_uid'];
 
                     header("Location: ../index.php?login=success");
                     exit();
@@ -51,5 +52,4 @@ if (isset($_POST['login-submit'])) {
 else {
     header("Location: ../index.php");
     exit();
-} 
-?>
+}

@@ -10,9 +10,6 @@
 
 
 <div class="body">
-  <div class="troll">
-    <img src="static/img/download.jpg">
-  </div>
   <div class="underhero">
       <?php
       if (isset($_SESSION['userId'])){
