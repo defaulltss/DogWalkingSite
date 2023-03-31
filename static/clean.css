@@ -11,9 +11,10 @@ a:hover{
 html {
     background-color: #E5E5E5;
 }
-.body {
+body {
     text-align: center;
-    height: 100%
+    height: 100vh;
+    overflow: hidden;
 }
 .rounded-lg-3 {
     height: 50%;
@@ -94,5 +95,11 @@ html {
 .container-sm{
     text-align: center;
     border: #000;
+    background-color: antiquewhite;
+    height: 80%;
+    width: 40%;
+}
+.body {
+    text-align: center;
 }
 /* https://getbootstrap.com/docs/5.2/forms/layout/ */
