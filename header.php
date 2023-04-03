@@ -1,6 +1,15 @@
 <style>
 <?php include "static/clean.css";?>
 </style>
+<?php 
+      require 'templates/dbh.inc.php';
+
+      $sql = "SELECT * FROM users";
+      $result = $conn->query($sql);
+
+      $sql_emp = "SELECT * FROM Employee";
+      $result_emp = $conn->query($sql_emp);
+?>
 <?php
    session_start(); 
 ?>
@@ -19,7 +28,64 @@
         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Izvēlne</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
+      <?php
+        if (isset($_SESSION['userId'])){
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              if ($row['Users_id'] == $_SESSION['userId']){
+                echo '<div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.php" style="font-size:xx-large">Sākums</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="post.php" style="font-size:xx-large">Veikt ierakstu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
+                  </li>
+                </ul>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <form class="d-flex mt-3" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-light" type="submit">Search</button>
+                </form>
+              </div>';
+                  }
+              }
+            }
+      }
+      else if(isset($_SESSION['EmployeeId'])){
+        if ($result_emp->num_rows > 0) {
+          while($EmpRow = $result_emp->fetch_assoc()) {
+            if ($EmpRow['Employee_id'] == $_SESSION['EmployeeId']){
+              echo '<div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.php" style="font-size:xx-large">Sākums</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="post.php" style="font-size:xx-large">Veikt ierakstu</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="post.php" style="font-size:xx-large">Meklēt sludinājumus</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
+                </li>
+              </ul>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light" type="submit">Search</button>
+              </form>
+            </div>';
+                }
+            }
+          }
+      }
+      else {
+        echo '<div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="index.php" style="font-size:xx-large">Sākums</a>
@@ -36,16 +102,15 @@
           <li class="nav-item">
             <a class="nav-link" href="EmpRegister.php" style="font-size:xx-large">Darbinieka reģistrācija</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
-          </li>
         </ul>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <form class="d-flex mt-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-light" type="submit">Search</button>
         </form>
-      </div>
+      </div>';
+        }
+      ?>
     </div>
   </div>
 </nav>
