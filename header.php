@@ -25,7 +25,7 @@
             <a class="nav-link" aria-current="page" href="index.php" style="font-size:xx-large">Sākums</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php" style="font-size:xx-large">Pieslēgties</a>
+            <a class="nav-link" href="useroremp.php" style="font-size:xx-large">Pieslēgties</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="register.php" style="font-size:xx-large">Reģistrācija</a>

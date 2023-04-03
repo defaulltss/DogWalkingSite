@@ -19,12 +19,14 @@
               if ($row['Users_id'] == $_SESSION['userId']){
                 echo 'Esiet sveicināti, '.$row['Users_firstname'];
                   }
-                  else {
-                    echo 'Lai veiktu ierakstus jums ir nepieciešams pieslēgties klāt platformai, ja jums jau nav izveidots konts tad droši variet reģistrēties';
-                    }
               }
             }
       }
+      else if(isset($_SESSION['employeeid'])){
+      }
+      else {
+        echo 'Lai veiktu ierakstus jums ir nepieciešams pieslēgties klāt platformai, ja jums jau nav izveidots konts tad droši variet <a href="register.php">reģistrēties</a>';
+        }
       ?>
   </div>
 </div>

@@ -1,11 +1,11 @@
 <?php
 
-if (isset($_POST['login-submit'])) {
+if (isset($_POST['Eogin-submit'])) {
 
     require 'dbh.inc.php';
 
-    $mailuid = $_POST['mailuid'];
-    $password = $_POST['pwd'];
+    $mailuid = $_POST['Emailuid'];
+    $password = $_POST['Epwd'];
 
     if (empty($mailuid) || empty($password)) {
         header("Location: ../login.php?error=emptyfields");
