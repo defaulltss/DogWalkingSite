@@ -96,7 +96,8 @@ html {
     text-align: center;
     border: #000;
     height: 80%;
-    width: 40%;
+    background-color: darkgoldenrod;
+
 }
 .body {
     text-align: center;

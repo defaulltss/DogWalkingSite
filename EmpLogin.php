@@ -11,7 +11,7 @@
         <input type="text" name="Emailuid" class="form-control form-control-sm" style="width: 20%; margin-left: 40%;"><br>
         <h6>Parole</h6>
         <input type="password" name="Epwd" class="form-control form-control-sm" style="width: 20%; margin-left: 40%"><br><br>
-        <button type="submit" name="Elogin-submit" class="btn btn-dark">Pieslēgties</button><br><br>
+        <button type="submit" name="Emp-login-submit" class="btn btn-dark">Pieslēgties</button><br><br>
     </form>
 </div>
 <?php

@@ -6,6 +6,9 @@
 
       $sql = "SELECT * FROM users";
       $result = $conn->query($sql);
+
+      $sql_emp = "SELECT * FROM Employee";
+      $result_emp = $conn->query($sql_emp);
 ?>
 
 
@@ -22,7 +25,14 @@
               }
             }
       }
-      else if(isset($_SESSION['employeeid'])){
+      else if(isset($_SESSION['EmployeeId'])){
+        if ($result_emp->num_rows > 0) {
+          while($EmpRow = $result_emp->fetch_assoc()) {
+            if ($EmpRow['Employee_id'] == $_SESSION['EmployeeId']){
+              echo 'Esiet sveicināti, '.$EmpRow['Employee_firstname'];
+                }
+            }
+          }
       }
       else {
         echo 'Lai veiktu ierakstus jums ir nepieciešams pieslēgties klāt platformai, ja jums jau nav izveidots konts tad droši variet <a href="register.php">reģistrēties</a>';
