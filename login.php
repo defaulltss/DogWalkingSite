@@ -13,7 +13,7 @@
         <input type="password" name="pwd" class="form-control form-control-sm" style="width: 50%; margin-left: 25%"><br><br>
         <button type="submit" name="login-submit" class="btn btn-light">Pieslēgties</button><br><br>
         <a style="color:white">Nēesi reģistrējies mūsu vietnē ?</a><br>
-        <a href="wewe.php" style="color:white">Reģistrēties</a>
+        <a href="register.php" style="color:white">Reģistrēties</a>
     </form>
 </div>
 <?php

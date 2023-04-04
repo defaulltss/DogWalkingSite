@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Četras Ķepas</a>
+    <a class="navbar-brand" href="index.php">Četras Ķepas</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,8 +42,11 @@
                     <a class="nav-link" href="post.php" style="font-size:xx-large">Veikt ierakstu</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
+                    <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Profils</a>
                   </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
+                </li>
                 </ul>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <form class="d-flex mt-3" role="search">
@@ -71,8 +74,11 @@
                 <a class="nav-link" href="post.php" style="font-size:xx-large">Meklēt sludinājumus</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
+                  <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Profils</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
+              </li>
               </ul>
               <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
               <form class="d-flex mt-3" role="search">

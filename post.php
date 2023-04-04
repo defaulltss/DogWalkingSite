@@ -19,9 +19,6 @@
               }
             }
       }
-    else {
-        echo '<div style="font-size: larger;">Lai veiktu ierakstus jums ir nepieciešams <a href="login.php">pieslēgties</a> klāt platformai, ja jums jau nav izveidots konts tad droši variet <a href="register.php">reģistrēties</a></div>';
-    }
 ?>
 </div>
 <?php
