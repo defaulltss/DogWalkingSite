@@ -13,14 +13,36 @@
 
 
 <div class="container-fluid">
-  <br><br><Br><Br>
   <div class="underhero" style="text-align:center">
-
+  <br><Br><br>
+  <?php
+      if (isset($_SESSION['userId'])){
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              if ($row['Users_id'] == $_SESSION['userId']){
+                echo 'Esiet sveicināti,'.$row['Users_firstname'];
+                  }
+              }
+            }
+      }
+      else if(isset($_SESSION['EmployeeId'])){
+        if ($result_emp->num_rows > 0) {
+          while($EmpRow = $result_emp->fetch_assoc()) {
+            if ($EmpRow['Employee_id'] == $_SESSION['EmployeeId']){
+              echo 'Esiet sveicināti,'.$EmpRow['Employee_firstname'];
+                }
+            }
+          }
+      }
+      else {
+        echo '<h4>Lai veiktu ierakstus jums ir nepieciešams <a href="login.php">pieslēgties</a> klāt platformai, ja jums jau nav izveidots konts tad droši variet <a href="register.php">reģistrēties</a><h4>';
+        }
+      ?>
   </div>
     <div class="container text-center">
       <div class="row">
-        <div class="col-sm-8"><img src="static/img/qiciesmsrwwesgo86jfl.jpg" class="col-sm-10" style= border-radius:20px;"></div>
-        <div class="col-sm-4"><strong>Nedaudz par mums</strong><br><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius rerum nostrum praesentium exercitationem asperiores delectus doloribus nihil enim eaque quasi sapiente inventore, hic porro dolorum temporibus possimus odit ad error. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eligendi aliquam, amet inventore voluptatem iusto. Omnis autem facere ut aut, molestias placeat, sed minus non, animi saepe pariatur nulla quaerat!</p></div>
+        <div class="col-sm-8"style="border-radius:20px; margin-top:2%"><img src="static/img/qiciesmsrwwesgo86jfl.jpg" class="col-sm-10" style="border-radius:20px; margin-top:2%"></div>
+        <div class="col-sm-4"style="border-radius:20px; margin-top:2%"><strong>Nedaudz par mums</strong><br><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius rerum nostrum praesentium exercitationem asperiores delectus doloribus nihil enim eaque quasi sapiente inventore, hic porro dolorum temporibus possimus odit ad error. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eligendi aliquam, amet inventore voluptatem iusto. Omnis autem facere ut aut, molestias placeat, sed minus non, animi saepe pariatur nulla quaerat!</p></div>
       </div>
     </div>
     <br><Br>

@@ -48,7 +48,7 @@
                   <a class="nav-link" href="templates/logout.inc.php" style="font-size:xx-large">Atslēgties</a>
                 </li>
                 </ul>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <form class="d-flex mt-3" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-light" type="submit">Search</button>
@@ -103,7 +103,7 @@
             <a class="nav-link" href="register.php" style="font-size:xx-large">Reģistrācija</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.php" style="font-size:xx-large">Veikt ierakstu</a>
+            <a class="nav-link" href="login.php" style="font-size:xx-large">Veikt ierakstu</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="EmpRegister.php" style="font-size:xx-large">Darbinieka reģistrācija</a>
