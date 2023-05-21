@@ -16,7 +16,7 @@ if (isset($_POST['post-made'])) {
     }
     else {
         $stmt = mysqli_stmt_init($conn);
-        $sql = "INSERT INTO Listing (Animal_owner, Animal_name, Animal_breed, Animal_description, Requirements) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO Listing (Animal_owner, Animal_id, Animal_breed, Animal_description, Requirements) VALUES (?,?,?,?,?)";
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../post.php?error=sqlerror");
             exit();

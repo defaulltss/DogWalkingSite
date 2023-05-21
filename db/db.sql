@@ -27,14 +27,27 @@ CREATE TABLE Employee (
     Employee_birthdate DATE NOT NULL,
     type INT(11) NULL Default '2'
 );
+CREATE TABLE Pet (
+    Pet_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Pet_name VARCHAR(50) NOT NULL,
+    Pet_breed VARCHAR(50) NOT NULL,
+    Pet_type VARCHAR(50) NOT NULL
+);
+CREATE TABLE Post (
+    Post_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    User_id INT NOT NULL,
+    Post_subject varchar(180)
+    Post_text varchar(420)
+    FOREIGN KEY (User_id) REFERENCES Users (Users_id)
+);
 CREATE TABLE Listing (
     Listing_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Animal_owner INT NOT NULL,
-    Animal_name VARCHAR(50) NOT NULL,
-    Animal_breed VARCHAR(50) NOT NULL,
-    Animal_description VARCHAR(600) NOT NULL,
-    Requirements VARCHAR(600) NOT NULL,
-    FOREIGN KEY (Animal_owner) REFERENCES Users (Users_id)
+    Animal_id INT NOT NULL,
+    Animal_description VARCHAR(400) NOT NULL,
+    Requirements VARCHAR(400) NOT NULL,
+    FOREIGN KEY (Animal_owner) REFERENCES Users (Users_id),
+    FOREIGN key (Animal_id) REFERENCES Pet (Pet_id)
 );
 CREATE TABLE Job (
     Listing_id INT NOT NULL,

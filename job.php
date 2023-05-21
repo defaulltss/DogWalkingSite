@@ -1,12 +1,6 @@
 <?php
     include_once 'header.php'
 ?>
-<?php 
-      require 'templates/dbh.inc.php';
-
-      $sql = "SELECT * FROM users";
-      $result = $conn->query($sql);
-?>
 <br><br><br>
 <div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height: 60%">
   <form action="templates/post.inc.php" method="POST"><br>

@@ -4,7 +4,7 @@
 <?php 
       require 'templates/dbh.inc.php';
 
-      $sql = "SELECT * FROM users";
+      $sql = "SELECT * FROM Users";
       $result = $conn->query($sql);
 
       $sql_emp = "SELECT * FROM Employee";
@@ -20,7 +20,7 @@
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               if ($row['Users_id'] == $_SESSION['userId']){
-                echo 'Esiet sveicināti,'.$row['Users_firstname'];
+                echo 'Esiet sveicināti, '.$row['Users_firstname'];
                   }
               }
             }
@@ -29,14 +29,11 @@
         if ($result_emp->num_rows > 0) {
           while($EmpRow = $result_emp->fetch_assoc()) {
             if ($EmpRow['Employee_id'] == $_SESSION['EmployeeId']){
-              echo 'Esiet sveicināti,'.$EmpRow['Employee_firstname'];
+              echo 'Esiet sveicināti, '.$EmpRow['Employee_firstname'];
                 }
             }
           }
       }
-      else {
-        echo '<h4>Lai veiktu ierakstus jums ir nepieciešams <a href="login.php">pieslēgties</a> klāt platformai, ja jums jau nav izveidots konts tad droši variet <a href="register.php">reģistrēties</a><h4>';
-        }
       ?>
   </div>
     <div class="container text-center">
