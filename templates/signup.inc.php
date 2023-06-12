@@ -25,7 +25,7 @@ if (isset($_POST['signup-submit'])) {
     }
     else {
         
-        $sql = "SELECT users_uid FROM users WHERE users_uid=?";
+        $sql = "SELECT Users_uid FROM Users WHERE Users_uid=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../register.php?error=emailinuse&firstname=".$username."&lastname".$usersurname);
@@ -40,30 +40,44 @@ if (isset($_POST['signup-submit'])) {
                 header("Location: ../register.php?error=emailinuse&firstname=".$username."&lastname".$usersurname);
                 exit();
             }
-            else {
-                
-                $sql = "INSERT INTO Users (Users_firstname, Users_lastname, Users_uid, Users_pwd, Users_phone) VALUES (?, ?, ?, ?, ?)";
+                $sql = "SELECT Users_uid FROM Users WHERE Users_phone=?";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../register.php?error=sqlerror");
+                    header("Location: ../register.php?error=phoneinuse");
                     exit();
                 }
-                else {
-                    $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-
-                    mysqli_stmt_bind_param($stmt, "sssss", $username, $usersurname ,$email, $hashedPwd, $phonenumber);
+                    mysqli_stmt_bind_param($stmt, "s", $phonenumber);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../login.php?signup=success");
-                    exit();
+                    mysqli_stmt_store_result($stmt);
+                    $resultCheck = mysqli_stmt_num_rows($stmt);
+                    if ($resultCheck > 0) {
+                        header("Location: ../register.php?error=phoneinuse");
+                        exit();
+                    }
+                        else {
+                            
+                            $sql = "INSERT INTO Users (Users_firstname, Users_lastname, Users_uid, Users_pwd, Users_phone) VALUES (?, ?, ?, ?, ?)";
+                            $stmt = mysqli_stmt_init($conn);
+                            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                header("Location: ../register.php?error=sqlerror");
+                                exit();
+                            }
+                            else {
+                                $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+                                mysqli_stmt_bind_param($stmt, "sssss", $username, $usersurname ,$email, $hashedPwd, $phonenumber);
+                                mysqli_stmt_execute($stmt);
+                                header("Location: ../login.php?signup=success");
+                                exit();
+                            }
+
+                        }
+                    }
                 }
+                mysqli_stmt_close($stmt);
+                mysqli_close($conn);
 
             }
-        }
-    }
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-
-}
 else if (isset($_POST['Esignup-submit'])) {
 
     require 'dbh.inc.php';
@@ -105,7 +119,21 @@ else if (isset($_POST['Esignup-submit'])) {
                 header("Location: ../EmpRegister.php?error=emailinuse&firstname=".$Eusername."&lastname".$Eusersurname);
                 exit();
             }
-            else {
+                $sql1 = "SELECT Employee_id FROM Employee WHERE Employee_phone=?";
+                $stmt1 = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt1, $sql1)) {
+                    header("Location: ../EmpRegister.php?error=phoneinuse");
+                    exit();
+                }
+                    mysqli_stmt_bind_param($stmt1, "s", $Ephonenumber);
+                    mysqli_stmt_execute($stmt1);
+                    mysqli_stmt_store_result($stmt1);
+                    $resultCheck1 = mysqli_stmt_num_rows($stmt1);
+                    if ($resultCheck1 > 0) {
+                        header("Location: ../EmpRegister.php?error=phoneinuse");
+                        exit();
+                    }
+                else {
                 
                 $sql1 = "INSERT INTO Employee (Employee_firstname, Employee_lastname, Employee_uid, Employee_pwd, Employee_phone, Employee_birthdate) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt1 = mysqli_stmt_init($conn);

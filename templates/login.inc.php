@@ -7,7 +7,11 @@ if (isset($_POST['login-submit'])) {
     $password = $_POST['pwd'];
 
     if (empty($mailuid) || empty($password)) {
-        header("Location: ../login.php?error=emptyfields");
+        echo ' 
+        <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+        </div>'
+        ;
         exit();
     }
     else {

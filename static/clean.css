@@ -13,8 +13,6 @@ html {
 }
 body {
     text-align: center;
-    height: 100vh;
-    overflow: hidden;
 }
 .rounded-lg-3 {
     height: 50%;
@@ -101,7 +99,4 @@ html {
 }
 .body {
     text-align: center;
-}
-.nav-link {
-    margin-left: 0%;
 }

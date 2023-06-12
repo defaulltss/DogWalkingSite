@@ -31,7 +31,9 @@ CREATE TABLE Pet (
     Pet_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Pet_name VARCHAR(50) NOT NULL,
     Pet_breed VARCHAR(50) NOT NULL,
-    Pet_type VARCHAR(50) NOT NULL
+    Pet_type VARCHAR(50) NOT NULL,
+    Pet_owner INT NOT NULL,
+    FOREIGN KEY (Pet_owner) REFERENCES Users (Users_id)
 );
 CREATE TABLE Post (
     Post_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -50,6 +52,7 @@ CREATE TABLE Listing (
     FOREIGN key (Animal_id) REFERENCES Pet (Pet_id)
 );
 CREATE TABLE Job (
+    Job_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Listing_id INT NOT NULL,
     Employee_id INT NOT NULL,
     FOREIGN KEY (Listing_id) REFERENCES Listing (Listing_id),

@@ -25,8 +25,7 @@
                     }
                 }
             }
-            echo '<br><a style="color:white; " href="profile-edit.php">Veikt izmaiņas</a>';
-            echo '<br><a style="color:white; " href="userforums.php">Mani ieraksti</a>';
+            echo '<br><button class="btn btn-light" style="margin-right:1%"><a href="profile-edit.php">Veikt izmaiņas</a></button><button class="btn btn-light" style="margin-left:1%"><a href="userforums.php">Mani ieraksti</a></button>';
         }
         else if (isset($_SESSION['EmployeeId'])){
             if ($result1->num_rows > 0) {
@@ -40,7 +39,7 @@
                     }
                 }
             }
-            echo '<br><a href="EmpProfile-edit.php">Veikt izmaiņas</a>';
+            echo '<br><button class="btn btn-light"><a href="EmpProfile-edit.php">Veikt izmaiņas</a></button>';
         }
       ?>
 </div>

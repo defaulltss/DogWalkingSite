@@ -2,7 +2,7 @@
     include_once 'header.php'
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height: 60%">
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height: 60%;">
   <form action="templates/post.inc.php" method="POST"><br>
         <h6 style="color:white">Vārds uz ko dzīvnieks atsaucas</h6>
         <input type="text" name="name" class="form-control form-control-sm" style="width: 50%; margin-left: 25%"><br>
