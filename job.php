@@ -2,7 +2,7 @@
     include_once 'header.php'
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height: 60%;">
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
   <form action="templates/post.inc.php" method="POST"><br>
         <h6 style="color:white">Vārds uz ko dzīvnieks atsaucas</h6>
         <input type="text" name="name" class="form-control form-control-sm" style="width: 50%; margin-left: 25%"><br>
@@ -13,6 +13,7 @@
         <h6 style="color:white">Prasības (cik ilgi staigāt vai ko darīt)</h6>
         <textarea type="password" placeholder="Vēlams būtu pastaigāt 20-25min te pat pa parku" name="req" class="form-control form-control-sm" style="width: 50%; margin-left: 25%"></textarea><br>
         <button type="submit" class="btn btn-light" name="post-made">Publicēt</button>
+        <br><br>
   </form>
 </div>
 <?php

@@ -11,7 +11,8 @@
       $result1 = $conn->query($sql1);
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height: 40%">
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
+<br>
     <h3 style="text-align: center; color:white; margin-top: 1%;">Mans profils</h3><br>
     <?php
         if (isset($_SESSION['userId'])){
@@ -25,7 +26,7 @@
                     }
                 }
             }
-            echo '<br><button class="btn btn-light" style="margin-right:1%"><a href="profile-edit.php">Veikt izmaiņas</a></button><button class="btn btn-light" style="margin-left:1%"><a href="userforums.php">Mani ieraksti</a></button>';
+            echo '<br><button class="btn btn-light" style="margin-right:1%; margin-bottom:2%; margin-top:2%"><a href="profile-edit.php">Veikt izmaiņas</a></button><button class="btn btn-light" style="margin-left:1%; margin-top:2% ; margin-bottom:2%"><a href="userforums.php">Mani ieraksti</a></button><br><br>';
         }
         else if (isset($_SESSION['EmployeeId'])){
             if ($result1->num_rows > 0) {
@@ -39,7 +40,7 @@
                     }
                 }
             }
-            echo '<br><button class="btn btn-light"><a href="EmpProfile-edit.php">Veikt izmaiņas</a></button>';
+            echo '<br><button class="btn btn-light" style="margin-right:1%; margin-bottom:2%; margin-top:2%"><a href="Empprofile-edit.php">Veikt izmaiņas</a></button><button class="btn btn-light" style="margin-left:1%; margin-top:2% ; margin-bottom:2%"><a href="userforums.php">Mani ieraksti</a></button><br><br>';
         }
       ?>
 </div>

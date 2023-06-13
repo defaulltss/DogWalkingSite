@@ -56,8 +56,8 @@
               echo '
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top:-5% ; color:white">
-                <img src="static/img/userpic.png" style="width:15% ; margin-right:2%">'
-                .$row["Users_firstname"].'
+                <img src="static/img/userpic.png" style="width:20% ; margin-right:2%">'
+                .$EmpRow["Employee_firstname"].'
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
                 <a class="dropdown-item" href="profile.php">Profils</a>

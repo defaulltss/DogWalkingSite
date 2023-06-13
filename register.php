@@ -2,7 +2,7 @@
     include_once 'header.php'
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height: 75%">
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
 <br><br><br>
 <h1 style="color:white">Reģistrācija</h1>
 <br>
@@ -20,6 +20,7 @@
         <h6 style="color:white">Tālruņa nummurs</h6>
         <input type="phone" name="phone" class="form-control form-control-sm" style="width: 50%; margin-left: 25%"><br><br>
         <button type="submit" class="btn btn-light" name="signup-submit">Reģistrēties</button>
+        <br><br><br>
     </form>
 </div>
 

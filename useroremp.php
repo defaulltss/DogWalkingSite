@@ -2,7 +2,7 @@
     include_once 'header.php'
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height:30%;" >
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;" >
 <br><br><br>
 <h3 style="color:white">Vai jūs vēlaties pieslēgties kā lietotājs vai kā darbinieks ?</h3><br><Br>
 <button type="submit" name="login-submit" class="btn btn-light" id="Login">Pieslēgties kā lietotājs</button>
@@ -12,6 +12,7 @@
     };
 </script>
 <button type="submit" name="login-submit" class="btn btn-light" id="ELogin">Pieslēgties kā darbinieks</button>
+<br><br>
 <script type="text/javascript">
     document.getElementById("ELogin").onclick = function () {
         location.href = "EmpLogin.php";

@@ -2,7 +2,7 @@
     include_once 'header.php'
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height:50%">
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
     <br><br><br>
     <h1 style="color:white">Autorizācija</h1>
     <br>
@@ -14,6 +14,7 @@
         <button type="submit" name="login-submit" class="btn btn-light">Pieslēgties</button><br><br>
         <a style="color:white">Nēesi reģistrējies mūsu vietnē ?</a><br>
         <a href="register.php" style="color:white">Reģistrēties</a>
+        <br><br>
     </form>
 </div>
 <?php

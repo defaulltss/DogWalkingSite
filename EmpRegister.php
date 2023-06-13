@@ -2,7 +2,7 @@
     include_once 'header.php'
 ?>
 <br><br><br>
-<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px; height:80%">
+<div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
 <br><br><br>
 <h4 style="color:white">Šeit jūs varat reģistrēties lai kļūtu par darbinieku</h4>
 <br>
@@ -22,6 +22,7 @@
         <h6 style="color:white">Dzimšanas datums</h6>
         <input type="date" name="date" class="form-control form-control-sm" style="width: 50%; margin-left: 25%"><br><br>
         <button type="submit" class="btn btn-light" name="Esignup-submit">Reģistrēties</button>
+        <br><br>
     </form>
 </div>
 
