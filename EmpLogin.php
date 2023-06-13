@@ -1,6 +1,48 @@
 <?php
     include_once 'header.php'
 ?>
+<?php
+        if (isset($_SESSION['Emp-Login-empty-fields'])){ 
+            ?>
+                <div class="alert alert-warning" role="alert" style="text-align: center;">
+                <div>
+                    <strong>HEY!!</strong> <?php echo $_SESSION['Emp-Login-empty-fields']; ?>
+                </div>
+                </div>
+            <?php
+            unset($_SESSION['Emp-Login-empty-fields']);
+        }
+        if (isset($_SESSION['Emp-Login-sql-error'])){ 
+            ?>
+                <div class="alert alert-warning" role="alert" style="text-align: center;">
+                <div>
+                    <strong>Uh oh !</strong> <?php echo $_SESSION['Emp-Login-sql-error']; ?>
+                </div>
+                </div>
+            <?php
+            unset($_SESSION['Emp-Login-sql-error']);
+        }
+        if (isset($_SESSION['Emp-Login-pwd-wrong'])){ 
+            ?>
+                <div class="alert alert-warning" role="alert" style="text-align: center;">
+                <div>
+                    <strong>OOPS!</strong> <?php echo $_SESSION['Emp-Login-pwd-wrong']; ?>
+                </div>
+                </div>
+            <?php
+            unset($_SESSION['Emp-Login-pwd-wrong']);
+        }
+        if (isset($_SESSION['Emp-Login-no-user'])){ 
+            ?>
+                <div class="alert alert-warning" role="alert" style="text-align: center;">
+                <div>
+                    <strong>Hmm </strong> <?php echo $_SESSION['Emp-Login-no-user']; ?>
+                </div>
+                </div>
+            <?php
+            unset($_SESSION['Emp-Login-no-user']);
+        }
+?>
 <br><br><br>
 <div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
     <br><br><br>

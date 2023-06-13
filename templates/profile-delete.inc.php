@@ -51,4 +51,5 @@
         header("Location: ../profile.php");
         exit();
     }
+    
 ?>

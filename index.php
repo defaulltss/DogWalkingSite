@@ -10,8 +10,28 @@
       $sql_emp = "SELECT * FROM Employee";
       $result_emp = $conn->query($sql_emp);
 ?>
-
-
+<?php
+    if (isset($_SESSION['Login-success'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                    <div>
+                        <strong>Yay !</strong> <?php echo $_SESSION['Login-success']; ?>
+                    </div>
+                    </div>
+                <?php
+                unset($_SESSION['Login-success']);
+            }
+    if (isset($_SESSION['Emp-Login-success'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                    <div>
+                        <strong>Hmm </strong> <?php echo $_SESSION['Emp-Login-success']; ?>
+                    </div>
+                    </div>
+                <?php
+                unset($_SESSION['Emp-Login-success']);
+            }
+?>
 <div class="container-fluid">
   <div class="underhero" style="text-align:center">
   <br>
