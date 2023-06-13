@@ -4,6 +4,38 @@
 <?php
     include_once 'footer.php'
 ?>
+<?php
+    if (isset($_SESSION['Profle-delete-empty-fields'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                        <div>
+                            <strong>Uhoh !</strong> <?php echo $_SESSION['Profle-delete-empty-fields']; ?>
+                        </div>
+                    </div>
+                <?php
+                unset($_SESSION['Profle-delete-empty-fields']);
+            }
+    if (isset($_SESSION['Profle-delete-sql-error'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                        <div>
+                            <strong>Hmm !</strong> <?php echo $_SESSION['Profle-delete-sql-error']; ?>
+                        </div>
+                    </div>
+                <?php
+                unset($_SESSION['Profle-delete-sql-error']);
+            }
+    if (isset($_SESSION['Profle-delete-pwd-wrong'])){ 
+              ?>
+                  <div class="alert alert-success" role="alert" style="text-align: center;">
+                    <div>
+                        <strong>Hey !</strong> <?php echo $_SESSION['Profle-delete-pwd-wrong']; ?>
+                    </div>
+                  </div>
+              <?php
+              unset($_SESSION['Profle-delete-pwd-wrong']);
+          }
+?>
 <?php 
       require 'templates/dbh.inc.php';
 

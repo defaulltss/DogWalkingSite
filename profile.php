@@ -10,6 +10,30 @@
       $sql1 = "SELECT * FROM Employee";
       $result1 = $conn->query($sql1);
 ?>
+<?php 
+    if (isset($_SESSION['Profle-edit-success'])){ 
+        ?>
+            <div class="alert alert-success" role="alert" style="text-align: center;">
+                <div>
+                    <strong>Yayy !</strong> <?php echo $_SESSION['Profle-edit-success']; ?>
+                </div>
+            </div>
+        <?php
+        unset($_SESSION['Profle-edit-success']);
+    }
+?>
+<?php 
+    if (isset($_SESSION['Emp-Profle-edit-success'])){ 
+        ?>
+            <div class="alert alert-success" role="alert" style="text-align: center;">
+                <div>
+                    <strong>Yayy !</strong> <?php echo $_SESSION['Emp-Profle-edit-success']; ?>
+                </div>
+            </div>
+        <?php
+        unset($_SESSION['Emp-Profle-edit-success']);
+    }
+?>
 <br><br><br>
 <div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
 <br>

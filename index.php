@@ -31,6 +31,16 @@
                 <?php
                 unset($_SESSION['Emp-Login-success']);
             }
+    if (isset($_SESSION['Profle-delete-success'])){ 
+              ?>
+                  <div class="alert alert-success" role="alert" style="text-align: center;">
+                  <div>
+                      <strong>Hey !</strong> <?php echo $_SESSION['Profle-delete-success']; ?>
+                  </div>
+                  </div>
+              <?php
+              unset($_SESSION['Profle-delete-success']);
+          }
 ?>
 <div class="container-fluid">
   <div class="underhero" style="text-align:center">

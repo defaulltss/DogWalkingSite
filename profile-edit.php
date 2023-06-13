@@ -4,6 +4,48 @@
 <?php
     include_once 'footer.php'
 ?>
+<?php
+    if (isset($_SESSION['Profle-edit-empty-fields'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                    <div>
+                        <strong>Uhoh !</strong> <?php echo $_SESSION['Profle-edit-empty-fields']; ?>
+                    </div>
+                    </div>
+                <?php
+                unset($_SESSION['Profle-edit-empty-fields']);
+            }
+    if (isset($_SESSION['Profle-edit-invadil-email'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                    <div>
+                        <strong>Hmm !</strong> <?php echo $_SESSION['Profle-edit-invadil-email']; ?>
+                    </div>
+                    </div>
+                <?php
+                unset($_SESSION['Profle-edit-invadil-email']);
+            }
+    if (isset($_SESSION['Profle-edit-email-inuse'])){ 
+              ?>
+                  <div class="alert alert-success" role="alert" style="text-align: center;">
+                  <div>
+                      <strong>Hey !</strong> <?php echo $_SESSION['Profle-edit-email-inuse']; ?>
+                  </div>
+                  </div>
+              <?php
+              unset($_SESSION['Profle-edit-email-inuse']);
+          }
+    if (isset($_SESSION['Profle-edit-success'])){ 
+              ?>
+                  <div class="alert alert-success" role="alert" style="text-align: center;">
+                  <div>
+                      <strong>Yayy !</strong> <?php echo $_SESSION['Profle-edit-success']; ?>
+                  </div>
+                  </div>
+              <?php
+              unset($_SESSION['Profle-edit-success']);
+          }
+?>
 <?php 
       require 'templates/dbh.inc.php';
 

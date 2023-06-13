@@ -4,6 +4,38 @@
 <?php
     include_once 'footer.php'
 ?>
+<?php
+    if (isset($_SESSION['Emp-Profile-edit-empty-fields'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                      <div>
+                          <strong>Uhoh !</strong> <?php echo $_SESSION['Emp-Profile-edit-empty-fields']; ?>
+                      </div>
+                    </div>
+                <?php
+                unset($_SESSION['Emp-Profile-edit-empty-fields']);
+            }
+    if (isset($_SESSION['Emp-Profile-edit-invadil-email'])){ 
+                ?>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                      <div>
+                          <strong>Hmm !</strong> <?php echo $_SESSION['Emp-Profile-edit-invadil-email']; ?>
+                      </div>
+                    </div>
+                <?php
+                unset($_SESSION['Emp-Profile-edit-invadil-email']);
+            }
+    if (isset($_SESSION['Emp-Profle-edit-email-inuse'])){ 
+              ?>
+                  <div class="alert alert-success" role="alert" style="text-align: center;">
+                    <div>
+                        <strong>Hey !</strong> <?php echo $_SESSION['Emp-Profle-edit-email-inuse']; ?>
+                    </div>
+                  </div>
+              <?php
+              unset($_SESSION['Emp-Profle-edit-email-inuse']);
+          }
+?>
 <?php 
       require 'templates/dbh.inc.php';
 
