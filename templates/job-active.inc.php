@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['job-create'])) {
+if (isset($_POST['job-accept'])) {
 
     session_start();
     require 'dbh.inc.php';
@@ -8,24 +8,16 @@ if (isset($_POST['job-create'])) {
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
-    $sql1 = "SELECT * FROM Pet";
+    $sql1 = "SELECT * FROM Employee";
     $result1 = $conn->query($sql1);
     $row1 = $result1->fetch_assoc();
 
-    $owner = $_SESSION['userId'];
+    $listingId = $_POST['listingid'];
     $about = $_POST['about'];
     $req = $_POST['req'];
     $petCheck = $_POST['petid'];
 
-    if (isset($_SESSION['userId'])){
-        if ($result1->num_rows > 0) {
-          while($row1 = $result1->fetch_assoc()) {
-            if ($row1['Pet_name'] == $petCheck){
-                    $petId = $row1['Pet_id'];
-                }
-            }
-          }
-    }
+
 
     if (empty($about) || empty($req)) {
         header("Location: ../job.php?error=emtpyfields");

@@ -14,12 +14,10 @@
     $result1 = $conn->query($sql1);
     $row1 = $result1->fetch_assoc();
 
-    if (isset($_SESSION['userId'])){
         if ($result1->num_rows >= 0) {
             while($row1 = $result1->fetch_assoc()) {
-            if ($row1['Users_id'] == $_SESSION['userId']){
                 $name = $row1['Users_firstname'];
-            }}}}
+            }}
 ?>
 <br>
 <div class="container-sm col-lg-10 bg-light" style="border-radius:25px; border-color: #000;; height: 85%">

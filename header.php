@@ -63,7 +63,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
                 <a class="dropdown-item" href="profile.php">Profils</a>
                 <a class="dropdown-item" href="listing.php">Veikt ierakstu</a>
-                <a class="dropdown-item" href="job.php">Ievietot sludinājumu</a>
+                <a class="dropdown-item" href="Emp-job.php">Meklēt sludinājumus</a>
                 <a class="dropdown-item" href="forums.php">Forums</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="templates/logout.inc.php">Atslēgties</a>
@@ -81,7 +81,7 @@
           <img src="static/img/userpic.png" style="width:20% ; margin-right:2%">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
-          <a class="dropdown-item" href="login.php">Pieslēgties</a>
+          <a class="dropdown-item" href="useroremp.php">Pieslēgties</a>
           <a class="dropdown-item" href="register.php">Reģistrēties</a>
           <a class="dropdown-item" href="forums.php">Forums</a>
         </div>

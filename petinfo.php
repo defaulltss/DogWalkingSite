@@ -11,6 +11,7 @@
       $result1 = $conn->query($sql1);
       if ($result1->num_rows > 0){
         $row1 = $result1->fetch_assoc();
+        $petOwnerCheck = $_SESSION['userId'];
         $petOwner = $row1['Pet_owner'];
       }
 ?>
@@ -18,15 +19,26 @@
 <div class="container-sm col-lg-4 bg-dark" style="border-radius:25px;">
 <br>
     <h3 style="text-align: center; color:white; margin-top: 1%;">Jūsu mājdzīvnieki</h3><br>
-    <?php
-                if ($_SESSION['userId'] == $petOwner){
-                    echo '<a style="color:white">Mājdzīvnieka vārds              : '.$row1['Pet_name'].'</a>'.'<br><br>';
-                    echo '<a style="color:white">Mājdzīvnieka šķirne             : '.$row1['Pet_breed'].'</a>'.'<br><br>';
-                    echo '<a style="color:white">Mājdzīvnieka tips               : '.$row1['Pet_type'].'</a>'.'<br><br>';
+    <?php       
+                      if (isset($_SESSION['userId'])){
+                        if ($result1->num_rows > 0) {
+                          while($row1 = $result1->fetch_assoc()) {
+                            if ($_SESSION['userId'] == $row1['Pet_owner']){
+                                echo '
+                                <div class="card w-10 mb-4" style="text-alignt:center;">
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$row1['Pet_name'].'</h5>
+                                    <p class="card-text">'.$row1['Pet_breed'].'</p>
+                                    <p class="card-text">'.$row1['Pet_type'].'</p>
+                                    <a href="#" class="btn btn-primary btn-success" style="margin-right:1%">labot</a><a href="#" class="btn btn-primary btn-danger" style="margin-left:1%">dzēst</a>
+                                </div>
+                                </div>
+                                ';
+                                }
+                            }
+                          }
                     }
-                else 
-                echo '<a style="color:white">Jums vēl nav pievienots neviens mājdzīvnieks</a><br>';
-            
+
             echo '<br><button class="btn btn-light" style="margin-right:1%; margin-bottom:2%; margin-top:2%"><a href="profile.php">Atpakaļ</a></button>';
       ?>
 </div>

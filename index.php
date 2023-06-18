@@ -49,7 +49,7 @@
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               if ($row['Users_id'] == $_SESSION['userId']){
-                // echo 'Esiet sveicināti, '.$row['Users_firstname'];
+               echo '<br><br> Esiet sveicināti, '.$row['Users_firstname'];
                   }
               }
             }
@@ -58,21 +58,26 @@
         if ($result_emp->num_rows > 0) {
           while($EmpRow = $result_emp->fetch_assoc()) {
             if ($EmpRow['Employee_id'] == $_SESSION['EmployeeId']){
-              // echo 'Esiet sveicināti, '.$EmpRow['Employee_firstname'];
+              echo '<br><br> Esiet sveicināti, '.$EmpRow['Employee_firstname'];
                 }
             }
           }
+        
       }
+      else 
+      echo '
+      <div class="hero" style="text-align: center; margin-top:2%">
+      <h3 style="font-family:Cambria, Cochin, Georgia, Times, serif">Esiet sveicināti</h3>
+      <p style="font-family: Cambria, Cochin, Georgia, Times, serif;">Ja jūs vēlaties mūsu pakalpojumus dorši reģistrējaties un sākat savu piedzīvojumu</p>
+      </div>
+      ';
       ?>
   </div>
 </div>
 <br><br>
-<div class="hero" style="text-align: center;">
-    <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Esiet sveicināti</h3>
-    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Ja jūs vēlaties mūsu pakalpojumus dorši reģistrējaties un sākat savu piedzīvojumu</p>
-</div>
-<div class="container" style="text-align: center;">
-    <img src="static/img/115.jpg" style="width: 100%;">
+
+<div class="" style="text-align: center;">
+    <img src="static/img/115.jpg" style="width: 100%; height:75%;">
 </div>
 <!-- <br><br><br>
 <div class="container text-center" style="text-align: center;">
