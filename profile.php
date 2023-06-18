@@ -50,7 +50,7 @@
                     }
                 }
             }
-            echo '<br><button class="btn btn-light" style="margin-right:1%; margin-bottom:2%; margin-top:2%"><a href="profile-edit.php">Veikt izmaiņas</a></button><button class="btn btn-light" style="margin-left:1%; margin-top:2% ; margin-bottom:2%"><a href="userforums.php">Mani ieraksti</a></button><br><br>';
+            echo '<br><button class="btn btn-light" style="margin-right:1%; margin-bottom:2%; margin-top:2%"><a href="profile-edit.php">Veikt izmaiņas</a></button><button class="btn btn-light" style="margin-left:1%; margin-right:1%; margin-top:2% ; margin-bottom:2%"><a href="userforums.php">Mani ieraksti</a></button><button class="btn btn-light" style="margin-left:1%; margin-top:2% ; margin-bottom:2%"><a href="petinfo.php">Mani mājdzīvnieki</a></button><br><br>';
         }
         else if (isset($_SESSION['EmployeeId'])){
             if ($result1->num_rows > 0) {

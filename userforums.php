@@ -16,39 +16,41 @@
     $result1 = $conn->query($sql1);
     $row1 = $result1->fetch_assoc();
 
-    while($row1 = $result1->fetch_assoc()){
-    if ($_SESSION['userId'] == $row1['Users_id']){
-            $name = $row1['Users_firstname'];
-    }
-}
+    if (isset($_SESSION['userId'])){
+        if ($result1->num_rows >= 0) {
+            while($row1 = $result1->fetch_assoc()) {
+            if ($row1['Users_id'] == $_SESSION['userId']){
+                $name = $row1['Users_firstname'];
+            }}}}
 ?>
 <br><br><br>
 <div class="container-sm col-lg-10 bg-light" style="border-radius:25px; border-color: #000;; height: 85%">
-    <h2>Zemāk redzamie ieraksti ir jūsu veikti : </h2>
+    <br>
+    <h2>Zemāk redzamie ieraksti ir jūsu veikti </h2>
+    <br>
         <div class="container-sm col-lg-8 bg-light" style="border-radius:25px;">
             <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                if ($_SESSION['userId'] == $row['User_id']){
             echo '
-            <table>
-                <tr>
-                    <td>Lietotāja vārds :</td>
-                    <td>Ieraksta tēma :</td>
-                    <td>Ieraksts :</td>
-                </tr>
-                    ';
-                    while($row = $result->fetch_assoc()){
-                        if ($_SESSION['userId'] == $row['User_id']){
-                        echo'
-                        <tr>
-                            <td>'.$name.'</td>
-                            <td>'.$row['Post_subject'].'</td>
-                            <td>'.$row['Post_text'].'</td>
-                        </tr> 
-                        ';
-                    ' 
-            </table>
+            <div class="card">
+            <div class="card-header">
+              <h3>'.$row['Post_subject'].'</h3>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                '.$row['Post_text'].'<br><br>
+                <footer class="blockquote-footer">'.$name.'</footer>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <br>
                 ';
-                }   
             }
+        }
+        }
         ?>
     </div>
 </div>

@@ -1,9 +1,7 @@
 <?php
     include_once 'header.php'
 ?>
-<?php
-    include_once 'footer.php'
-?>
+
 <?php 
 
     require 'templates/dbh.inc.php';
@@ -16,31 +14,39 @@
     $result1 = $conn->query($sql1);
     $row1 = $result1->fetch_assoc();
 
+    if (isset($_SESSION['userId'])){
+        if ($result1->num_rows >= 0) {
+            while($row1 = $result1->fetch_assoc()) {
+            if ($row1['Users_id'] == $_SESSION['userId']){
+                $name = $row1['Users_firstname'];
+            }}}}
 ?>
-<br><br><br>
+<br>
 <div class="container-sm col-lg-10 bg-light" style="border-radius:25px; border-color: #000;; height: 85%">
-    <h2>Citu saimnieku veiktie ieraksti</h1>
+    <h2>Citu cilvēku veiktie ieraksti</h1>
     <?php
-    echo '
-    <table>
-        <tr>
-            <td>Lietotāja vārds :</td>
-            <td>Ieraksta tēma :</td>
-            <td>Ieraksts :</td>
-        </tr>
-            ';
-            while($row = $result->fetch_assoc()){
-                echo'
-                <tr>
-                    <td>'.$row1['Users_firstname'].'</td>
-                    <td>'.$row['Post_subject'].'</td>
-                    <td>'.$row['Post_text'].'</td>
-                </tr> 
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+            echo '
+            <div class="card">
+            <div class="card-header">
+              <h3>'.$row['Post_subject'].'</h3>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                '.$row['Post_text'].'<br><br>
+                <footer class="blockquote-footer">'.$name.'</footer>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <br>
                 ';
-            ' 
-    </table>
-        ';
-        } 
+            }
+        }
     ?>
     </div>
 </div>
+<?php
+    include_once 'footer.php'
+?>

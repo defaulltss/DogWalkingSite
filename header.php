@@ -23,7 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark bg-dark">
   <div class="container" id="navbarNav">
-    <img src="static/img/logo.png" style="width: 7%">
+    <a href="index.php"><img src="static/img/logo.png" style="width: 22%"></a>
       <?php
         if (isset($_SESSION['userId'])){
           if ($result->num_rows > 0) {
@@ -39,6 +39,7 @@
                   <a class="dropdown-item" href="profile.php">Profils</a>
                   <a class="dropdown-item" href="listing.php">Veikt ierakstu</a>
                   <a class="dropdown-item" href="job.php">Ievietot sludinājumu</a>
+                  <a class="dropdown-item" href="petcreate.php">Pievienot mājdzīvnieku</a>
                   <a class="dropdown-item" href="forums.php">Forums</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="templates/logout.inc.php">Atslēgties</a>
@@ -88,16 +89,6 @@
      ';
         }
       ?>
-              <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top:-5% ; color:white">
-          <img src="static/img/userpic.png" style="width:20% ; margin-right:2%">
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center;">
-          <a class="dropdown-item" href="login.php">Pieslēgties</a>
-          <a class="dropdown-item" href="register.php">Reģistrēties</a>
-          <a class="dropdown-item" href="forums.php">Forums</a>
-        </div>
-        </li> -->
   </div>
 </nav>
 <main>
