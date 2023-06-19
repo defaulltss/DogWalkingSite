@@ -33,20 +33,24 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 if ($_SESSION['userId'] == $row['User_id']){
-            echo '
-            <div class="card">
-            <div class="card-header">
-              <h3>'.$row['Post_subject'].'</h3>
-            </div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                '.$row['Post_text'].'<br><br>
-                <footer class="blockquote-footer">'.$name.'</footer>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-          <br>
+                    echo '
+                    <form action>
+                    <div class="card">
+                    <div class="card-header">
+                    <h3>'.$row['Post_subject'].'</h3>
+                        </div>
+                        <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            '.$row['Post_text'].'<br><br>
+                            <footer class="blockquote-footer">'.$name.'</footer>
+                            </footer>
+                        </blockquote>
+                        <br>
+                        <a href="userforums-edit.php?forumseditid='.$row['Post_id'].'" type="submit" class="btn btn-primary btn-success" style="margin-right:1%" name="forumsedit">labot</a><a href="templates/userforums-delete.inc.php?forumsdeleteid='.$row['Post_id'].'" class="btn btn-primary btn-danger" style="margin-left:1%">dzēst</a>
+                        </div>
+                    </div>
+                    <form>
+                <br>
                 ';
             }
         }
