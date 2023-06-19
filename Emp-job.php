@@ -28,16 +28,15 @@
                       if (isset($_SESSION['EmployeeId'])){
                         if ($result1->num_rows > 0) {
                           while($row1 = $result1->fetch_assoc()) {
-                            while($row2 = $result2->fetch_assoc()){
                                 echo '
-                                <form method="POST" action="job-active.inc.php">
+                                <form action="templates/job-active.inc.php" method="POST">
                                 <div class="card w-10 mb-4" style="text-alignt:center;">
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row2['Pet_name'].'</h5>
                                     <p class="card-text">'.$row1['Animal_description'].'</p>
                                     <p class="card-text">'.$row1['Requirements'].'</p>
                                     <input type="hidden" name="listingid" value="'.$row1['Listing_id'].'"></input>
-                                    <a href="#" class="btn btn-primary btn-success" style="margin-right:1%" name="job-accept">Apstirpināt</a>
+                                    <a type="submit" class="btn btn-primary btn-success" style="margin-right:1%" name="job-accept">Apstirpināt</a>
                                 </div>
                                 </div>
                                 </form>
@@ -45,7 +44,6 @@
                                 }
                             }
                           }
-                        }
       ?>
       <br>
 </div>
